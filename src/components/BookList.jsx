@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap/Container";
+import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import SingleBook from "./SingleBook";
@@ -8,9 +8,9 @@ const BookList = () => {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col xs={12} md={4}>
           {fantasy.map((book) => {
-            <SingleBook title={book.title} img={book.img} />;
+            return <SingleBook title={book.title} img={book.img} />;
           })}
         </Col>
       </Row>
