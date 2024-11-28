@@ -1,14 +1,23 @@
-import Card from "react-bootstrap/Card";
+import { Component } from "react";
+import { Card } from "react-bootstrap";
+import StarRate from "./StarRate";
 
-const SingleBook = (props) => {
-  return (
-    <Card className="book-cover d-flex flex-column">
-      <Card.Img variant="top" src={props.img} />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-      </Card.Body>
-    </Card>
-  );
-};
+class SingleBook extends Component {
+  state = {
+    selected: false,
+  };
+
+  render() {
+    return (
+      <Card onClick={() => this.setState({ selected: !this.state.selected })} style={{ border: this.state.selected ? "3px solid red" : "none" }}>
+        <Card.Img variant="top" src={this.props.book.img} />
+        <Card.Body>
+          <Card.Title style={{ color: "black" }}>{this.props.book.title}</Card.Title>
+          <StarRate />
+        </Card.Body>
+      </Card>
+    );
+  }
+}
 
 export default SingleBook;
