@@ -10,7 +10,7 @@ const StarRate = () => {
 
   return (
     <>
-      {[...Array(5)].map((star, index) => {
+      {[...Array(5)].map((_, index) => {
         const starColor = index < rating ? "yellow" : "gray";
         return (
           <>
